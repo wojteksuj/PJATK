@@ -2,68 +2,40 @@
 
 ## Introduction
 
-This project implements a **Distributed Averaging System (DAS)** in Java, where processes can run in two modes: **master** and **slave**. These modes are automatically determined based on the availability of a specified UDP port.
+This project implements a Distributed Averaging System (DAS) in Java, where processes can run in two modes: master and slave. These modes are automatically determined based on the availability of a specified UDP port. The program demonstrates message passing and computation across distributed systems using UDP sockets.
 
-The program demonstrates message passing and computation across distributed systems using **UDP sockets**.
+## Implemented features
 
----
+- Master mode
+- Slave mode
 
-## ✅ Implemented Features
+### Master mode
 
-- **Master Mode**
-- **Slave Mode**
+The program enters master mode if it successfully opens the specified UDP port. In this mode, it receives messages from slaves using UDP and stores all received numbers. The first number stored is the number provided when the master program is launched; subsequent numbers are those sent by slaves.
 
-### 🔹 Master Mode
+If the master receives the number `0`, it calculates the average of all stored numbers and broadcasts the result to all devices connected on the same port.  
+If it receives the number `-1`, it broadcasts `-1` to all connected devices, closes the socket, and terminates.  
+If the master receives any other number, it prints it to the console and stores it in memory for future calculations.
 
-If the program successfully opens the specified UDP port, it enters **master mode**. In this mode:
+### Slave mode
 
-- It receives messages from slaves using UDP.
-- The first number stored is the one provided when the master program is launched.
-- Subsequent numbers are received from slave processes.
-- Behavior based on received number:
-  - If `0`: Calculates the average of all stored numbers and broadcasts the result to all devices on the same port.
-  - If `-1`: Broadcasts `-1` to all devices, closes the socket, and terminates.
-  - Any other number: Prints it to the console and stores it for future calculations.
+The program enters slave mode if it cannot open the specified port, which happens if another instance is already running as the master. In slave mode, the program:
 
-### 🔹 Slave Mode
+- Creates a UDP socket with a random port
+- Sends the specified number to the master process running on the given port
+- Terminates immediately after sending the message
 
-If the program cannot open the specified port (another instance is running as master), it enters **slave mode**. In this mode:
+## Implemented classes
 
-- It creates a UDP socket with a random port.
-- Sends the specified number to the master running on the given port.
-- Terminates immediately after sending the message.
+- DAS – this is the main class of the program containing the logic for both master and slave modes
 
----
+## Implemented methods
 
-## 🧩 Implemented Classes
+- `main` – parses command-line arguments (port and number), determines which mode to run, and calls either `runMaster` or `runSlave`
+- `runMaster` – implements the full logic for master mode
+- `runSlave` – implements the full logic for slave mode
+- `broadcast` – used by master mode to broadcast a message to all clients connected on the local network
 
-- **`DAS`** – The main class containing logic for both master and slave modes.
+## Difficulties
 
----
-
-## 🧪 Implemented Methods
-
-- **`main`**  
-  Parses command-line arguments (port and number), determines which mode to run, and calls either `runMaster` or `runSlave`.
-
-- **`runMaster`**  
-  Implements the full logic for master mode.
-
-- **`runSlave`**  
-  Implements the full logic for slave mode.
-
-- **`broadcast`**  
-  Used in master mode to broadcast a message to all clients on the local network.
-
----
-
-## ⚠️ Difficulties
-
-The main difficulty was ensuring correct communication between the master and slave. Issues included:
-
-- Ensuring the slave correctly sent its number to the master.
-- Handling the master's behavior when receiving various messages.
-- Implementing the master mode logic correctly.
-- Detecting and switching to slave mode when the port was already in use.
-
----
+The main difficulty I encountered was managing correct communication between the master and slave. I faced issues with the slave sending a number to the master and ensuring t
