@@ -1,41 +1,65 @@
-# Project: Distributed Averaging System (DAS)
+## 📡 Project: Distributed Averaging System (DAS)
 
-## Introduction
+### 🧾 Introduction
 
-This project implements a Distributed Averaging System (DAS) in Java, where processes can run in two modes: master and slave. These modes are automatically determined based on the availability of a specified UDP port. The program demonstrates message passing and computation across distributed systems using UDP sockets.
+The **Distributed Averaging System (DAS)** is a Java-based project demonstrating fundamental concepts of distributed computing and message passing over **UDP sockets**. Each process can act as either a **master** or **slave**, depending on the availability of a specific UDP port. The system showcases real-time communication, data aggregation, and broadcasting in a networked environment.
 
-## Implemented features
+---
 
-- Master mode
-- Slave mode
+### ✨ Key Features
 
-### Master mode
+- 🔁 **Automatic Role Selection** (Master/Slave based on port availability)
+- 🧠 **Master Mode**: Data collection, averaging, and broadcasting
+- 📤 **Slave Mode**: Sends a number and exits
+- 🌐 **UDP-based Communication** across local network
+- 📊 **Distributed Averaging Algorithm** with live coordination
 
-The program enters master mode if it successfully opens the specified UDP port. In this mode, it receives messages from slaves using UDP and stores all received numbers. The first number stored is the number provided when the master program is launched; subsequent numbers are those sent by slaves.
+---
 
-If the master receives the number `0`, it calculates the average of all stored numbers and broadcasts the result to all devices connected on the same port.  
-If it receives the number `-1`, it broadcasts `-1` to all connected devices, closes the socket, and terminates.  
-If the master receives any other number, it prints it to the console and stores it in memory for future calculations.
+### 🧭 Mode Descriptions
 
-### Slave mode
+#### 🧑‍✈️ Master Mode
 
-The program enters slave mode if it cannot open the specified port, which happens if another instance is already running as the master. In slave mode, the program:
+The application enters master mode when it can successfully bind to the specified UDP port. In this mode, the master:
 
-- Creates a UDP socket with a random port
-- Sends the specified number to the master process running on the given port
-- Terminates immediately after sending the message
+- Accepts numbers from slaves via UDP.
+- Stores the numbers in memory for aggregation.
+- Treats the **first** number as its own input.
+- Reacts to specific numbers:
+  - `0` → Calculates and **broadcasts the average**.
+  - `-1` → **Sends a termination signal** (`-1`) to all clients and shuts down.
+  - Any other number → Logs and stores it.
 
-## Implemented classes
+#### 🧑‍💻 Slave Mode
 
-- DAS – this is the main class of the program containing the logic for both master and slave modes
+If the port is already taken (i.e., a master is running), the process becomes a slave. In this mode, the slave:
 
-## Implemented methods
+- Binds to a random UDP port.
+- Sends a single number to the master.
+- Exits after successfully sending the message.
 
-- `main` – parses command-line arguments (port and number), determines which mode to run, and calls either `runMaster` or `runSlave`
-- `runMaster` – implements the full logic for master mode
-- `runSlave` – implements the full logic for slave mode
-- `broadcast` – used by master mode to broadcast a message to all clients connected on the local network
+---
 
-## Difficulties
+### 🧱 Code Structure
 
-The main difficulty I encountered was managing correct communication between the master and slave. I faced issues with the slave sending a number to the master and ensuring t
+#### 📄 Main Class: `DAS.java`
+
+Handles all logic for both master and slave modes.
+
+#### 🧩 Core Methods:
+
+- `main(String[] args)` – Parses input, detects role, and initiates corresponding mode.
+- `runMaster()` – Handles incoming messages and system behavior in master mode.
+- `runSlave()` – Sends number to master and terminates.
+- `broadcast(String message)` – Used by master to send messages to all clients on the local network.
+
+---
+
+### 🧗 Challenges
+
+One of the key challenges was ensuring **reliable communication** between master and slave over UDP, especially when slaves exited immediately after sending.  
+Handling timing, port conflicts, and proper broadcast behavior required careful testing and debugging.
+
+---
+
+🛠️ *Developed for the SKJ course to explore network programming and distributed systems using Java.*
