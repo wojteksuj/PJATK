@@ -1,5 +1,4 @@
 
-# Project Title
+# PJATK projects
 
-A brief description of what this project does and who it's for
-
+This repository contains many of the projects I completed during my studies at PJATK.
