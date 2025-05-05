@@ -1,6 +1,6 @@
-## ♟️ Checkers Board
+## ♟️ Checkers Game
 
-**Checkers Board** is a 2D interactive checkers (draughts) game developed in **Java**, with the core game logic implemented in **C** and accessed via **JNI (Java Native Interface)** for performance and rule accuracy.
+**Checkers Game** is a 2D interactive checkers (draughts) game developed in **Java**, with the core game logic implemented in **C** and accessed via **JNI (Java Native Interface)** for performance and rule accuracy.
 
 ---
 
