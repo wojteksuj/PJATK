@@ -1,47 +1,61 @@
-# Checkers Board
+## ♟️ Checkers Board
 
-**Checkers Board** is a 2D checkers (draughts) game built in Java, featuring a graphical 8x8 board and advanced game logic powered by a native C backend via JNI.
-
-## Description
-
-Checkers Board provides a classic checkers experience with an interactive GUI. The game logic-including piece movement, capturing, multi-capturing, and promotion to "dame" (king)-is handled by a performant C library, ensuring accurate rules and smooth gameplay. The Java front-end uses Swing to render the board and handle user interaction.
-
-## Features
-
-- **Interactive Java Swing GUI**: Clickable 8x8 board with visual feedback for moves and captures.
-- **Native C Backend**: Board state and rules are managed in C, accessed from Java via JNI for efficiency and reliability.
-- **Standard Checkers Gameplay**:
-  - Piece movement and capturing, including forced and multi-captures.
-  - Promotion to "dame" (king) pieces with special movement rules.
-  - Visual distinction for regular and king pieces.
-- **Comprehensive Testing**: JUnit tests cover board setup, valid moves, capturing, promotion, and multi-capture scenarios.
-- **Modular Design**: Clear separation between UI, game logic, and native integration.
-
-## Project Structure
-
-- `Board.java` – Main game logic, JNI bindings, board rendering, and user interaction.
-- `Board.h` – JNI header for native methods, defines C interface.
-- `Main.java` – Application entry point; launches the game window.
-- `MyFrame.java` – Custom JFrame for displaying the checkers board.
-- `MainTest.java` – JUnit test suite for board logic and gameplay rules.
-
-## Getting Started
-
-1. **Build the Native C Library**  
-   Compile the C code as a shared library named `Project1_C` and ensure it is accessible to Java.
-
-2. **Run the Java Application**  
-   Launch `Main.java` to start the game window.
-
-3. **Play**  
-   Click on board tiles to select and move pieces. The game enforces standard checkers rules, including capturing and promotion.
-
-## Requirements
-
-- Java 8 or higher
-- Native C compiler (for JNI library)
-- JUnit (for running tests)
+**Checkers Board** is a 2D interactive checkers (draughts) game developed in **Java**, with the core game logic implemented in **C** and accessed via **JNI (Java Native Interface)** for performance and rule accuracy.
 
 ---
 
-*Developed as a Java/C JNI project for interactive checkers gameplay.*
+### 📝 Description
+
+The game offers a classic checkers experience through a Swing-based GUI. Core rules — including piece movement, multi-captures, and king promotions — are enforced by a native C backend, ensuring both speed and rule correctness. The GUI provides visual feedback and intuitive interaction for players.
+
+---
+
+### ✨ Features
+
+- 🖼️ **Java Swing GUI:** Clickable 8×8 board with visual indicators for legal moves and captures.
+- ⚙️ **C Backend via JNI:** Efficient and robust rule enforcement, including:
+  - Regular and king (dame) piece logic
+  - Forced captures and multi-jumps
+- 👑 **Gameplay Rules:**
+  - Automatic promotion to king
+  - Multi-capture chaining
+  - Visual separation between regular and king pieces
+- 🧪 **JUnit Test Suite:** Covers game logic scenarios like valid moves, promotions, and edge cases.
+- 🧩 **Modular Architecture:** Clean separation between GUI, logic, and native integration.
+
+---
+
+### 🗂️ Project Structure
+
+- `Board.java` – Handles GUI, user actions, and JNI calls.
+- `Board.h` – JNI header defining native method bindings.
+- `Main.java` – Launches the game window.
+- `MyFrame.java` – Custom `JFrame` for displaying the board.
+- `MainTest.java` – JUnit tests for rules and logic validation.
+
+---
+
+### 🚀 Getting Started
+
+1. **Build the Native Library:**
+   - Compile the C code to a shared library named `Project1_C`.
+   - Place it where your Java app can load it (e.g., `java.library.path`).
+
+2. **Run the Game:**
+   - Launch `Main.java` to start the checkers application.
+
+3. **Play:**
+   - Click tiles to select and move.
+   - Game automatically handles turn-based play, captures, and king promotions.
+
+---
+
+### ✅ Requirements
+
+- Java 8+
+- Native C compiler
+- JUnit (for testing)
+
+---
+
+🛠️ *Developed as part of the UTP (Universal Programming Techniques) course to demonstrate Java–C integration with interactive gameplay.*
