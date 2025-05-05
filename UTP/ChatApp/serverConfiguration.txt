@@ -1,0 +1,3 @@
+serverName=Chat
+port=1111
+bannedWords=dog,school,spam
