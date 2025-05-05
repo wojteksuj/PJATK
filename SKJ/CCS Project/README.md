@@ -1,20 +1,56 @@
-# Project: Centralized Computing System (CCS)
+## 🖥️ Project: Centralized Computing System (CCS)
 
-## Implemented features
+### 🧾 Overview
 
-- **Service Discovery:** A UDP server was implemented to listen on the provided port for discovery messages that start with `"CCS DISCOVER"`. Upon receiving such a message, the server replies with `"CCS FOUND"`.
-- **Client Communication via TCP:** A TCP server listens on the same port for incoming client connections. Each client connection is handled in a separate thread to allow concurrent client interactions.
-- **Request Handling:** The server processes requests in the format `<OPER> <ARG1> <ARG2>`, performs the specified arithmetic operation, and sends the result or an error message back to the client.
-- **Statistics Reporting:** The server tracks statistics such as the number of clients connected, total requests processed, operation counts, incorrect operations, and the sum of all results. These statistics are printed every 10 seconds.
+The **Centralized Computing System (CCS)** is a Java-based server application demonstrating concepts of service discovery, client-server architecture, multithreading, and statistics tracking. It utilizes both **UDP** for discovery and **TCP** for communication with clients.
 
-## Non-implemented features
+---
 
-- **Graceful Shutdown:** There is no explicit handling for graceful server shutdown, which could involve closing open sockets and saving state.
+### ✅ Implemented Features
 
-## Implemented classes
+- 🔍 **Service Discovery (UDP):**  
+  Listens on a given port for messages starting with `"CCS DISCOVER"` and responds with `"CCS FOUND"` to help clients locate the server.
 
-- **CCS:** This is the main class of the program containing all the logic to handle UDP and TCP servers and report statistics.
+- 🔗 **Client Communication via TCP:**  
+  Accepts incoming client connections over TCP. Each client is handled in its own thread to support concurrency.
 
-## Difficulties
+- 🧮 **Request Handling:**  
+  Processes requests of the form:  
+Executes the requested arithmetic operation and responds with the result or an error message.
 
-The main difficulty I encountered was managing concurrent client connections while ensuring thread safety and consistent data handling, especially when updating shared statistics and handling multiple requests simultaneously. Another challenge was to correctly calculate statistics and report them accurately.
+- 📊 **Statistics Reporting:**  
+Tracks:
+- Number of active clients
+- Total number of requests
+- Count of operations performed
+- Number of invalid operations
+- Sum of all computed results  
+📅 Reports are printed to the console every **10 seconds**.
+
+---
+
+### ❌ Not Implemented
+
+- **Graceful Shutdown:**  
+The system does not yet support graceful shutdown, such as cleanly closing sockets or saving state before exiting.
+
+---
+
+### 🧱 Code Structure
+
+- **`CCS.java`** — Main class containing:
+- UDP server for discovery
+- TCP server for client connections
+- Logic for handling operations and tracking statistics
+
+---
+
+### 🧗 Challenges Faced
+
+- 🧵 Managing concurrent client connections while avoiding race conditions during shared state updates.
+- 🧮 Correctly computing and formatting live statistics under concurrent load.
+- ⚠️ Ensuring error handling for malformed client requests without crashing the server.
+
+---
+
+🛠️ *This project was developed for the SKJ (Computer Networks and Network Programming in Java) course.*
