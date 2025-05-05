@@ -1,49 +1,49 @@
-# Dungeon of Words
+# 🏰 Dungeon of Words
 
-**Dungeon of Words** is a 2D word-based arcade game developed in C++ using the **SFML (Simple and Fast Multimedia Library)**.
+**Dungeon of Words** is a fast-paced 2D word-based arcade game developed in C++ using **SFML (Simple and Fast Multimedia Library)**. 🧠⌨️
 
-## Description
+## 🎮 Game Description
 
-Dungeon of Words challenges players to type falling words correctly before they reach the bottom of the screen. Players must respond quickly to maintain their score and health, represented visually by heart icons.
+Test your reflexes and typing skills! In *Dungeon of Words*, players must correctly type falling words before they hit the bottom of the screen. Each missed word costs you health (💔), and the game ends when you lose all your hearts. Type quickly, stay sharp, and aim for the high score! 🚀
 
-## Features
+## ✨ Features
 
-- **Multiple Game States**:
-  - Menu
-  - Options
-  - Gameplay
-  - Pause
-  - Game Over
-  - Scoreboard
-  - Saving
+### 🧩 Game States
+- 🏠 Menu  
+- ⚙️ Options  
+- ▶️ Gameplay  
+- ⏸️ Pause  
+- 💀 Game Over  
+- 🏆 Scoreboard  
+- 💾 Saving  
 
-- **Gameplay Mechanics**:
-  - Words fall with velocity and must be typed correctly.
-  - Score increases with each correct word.
-  - Health decreases when words are missed.
-  - Game over triggers when all hearts are lost.
+### 🕹️ Gameplay Mechanics
+- Falling words must be typed accurately before hitting the ground.  
+- Score increases with each successful word.  
+- Health (❤️) is lost when words are missed.  
+- Game over is triggered when all hearts are gone.
 
-- **Customization**:
-  - Difficulty adjustment via sliders.
-  - Font selection options.
-  - Textures and fonts loaded from external files.
+### 🎛️ Customization
+- Adjust difficulty via intuitive sliders.  
+- Choose from different fonts.  
+- External resources (fonts, textures) enhance player experience.
 
-- **Scoreboard**:
-  - Top scorers are read from and written to a `scores.txt` file.
-  - Best five scores are displayed on the scoreboard.
+### 🏆 Scoreboard
+- Top 5 scores saved in `scores.txt`.  
+- Automatically loads and displays high scores.
 
-- **Graphics and UI**:
-  - SFML rendering for all game elements including text, backgrounds, sliders, and icons.
-  - Custom textures for walls and hearts.
-  - Various fonts for UI styling.
+### 🖼️ Graphics & UI
+- All game elements (text, backgrounds, sliders, icons) rendered via **SFML**.  
+- Includes custom textures for walls and hearts.  
+- Multiple fonts available for style and readability.
 
-## Technical Highlights
+## 🛠️ Technical Highlights
 
-- Built with SFML for windowing, graphics, and event handling.
-- Modular code with separate files for rendering, game logic, and score management.
-- External resource loading (fonts, textures, word lists).
-- Efficient rendering loop and game state management.
+- Built using **SFML** for windowing, graphics, and input.  
+- Clean modular codebase with dedicated files for rendering, game logic, and score tracking.  
+- Efficient game loop and robust state management.  
+- Resources (fonts, textures, word lists) loaded from external files for easy customization.
 
 ---
 
-*Developed as a C++ SFML project for interactive word-based gameplay.*
+🧩 *Created as part of a C++ SFML project to combine typing skills with arcade-style gameplay.*
