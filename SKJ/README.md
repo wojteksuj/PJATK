@@ -1,1 +1,1 @@
-Projects I completed for the SKJ (Sieci Komputerowe w Javie) course
+Projects I completed for the SKJ (Computer Networks and Network Programming in Java) course
