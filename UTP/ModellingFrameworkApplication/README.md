@@ -1,63 +1,72 @@
-# Modelling Framework Sample
+## 📊 Modelling Framework Sample
 
-**Modelling Framework Sample** is a Java-based desktop application for running, extending, and analyzing economic models using data files and Groovy scripting. The application features a modular design, a Swing-based GUI, and supports dynamic model extension with custom scripts.
-
-## Description
-
-This tool enables users to select from multiple predefined economic models, load time series data, run simulations, and analyze results-all through an interactive graphical interface. Users can also extend model outputs by writing and executing Groovy scripts, either loaded from files or written directly in the built-in script editor. Results are presented in a tabular format for easy analysis.
-
-## Features
-
-- **Multiple Economic Models:**  
-  Choose from predefined models (`Model1`, `Model2`, `Model3`), each with different economic logic and outputs.
-
-- **Data-Driven Simulation:**  
-  Load data files (e.g., `Data1.txt`, `Data2.txt`, `Data3.txt`) to initialize model variables and time series.
-
-- **Groovy Script Integration:**  
-  - Run scripts from files or write and execute scripts in the built-in editor.
-  - Scripts can create new variables or transform results dynamically.
-
-- **Interactive GUI:**  
-  - Model and data selection via lists.
-  - Buttons for running models, running scripts, and opening the script editor.
-  - Results displayed in a scrollable, formatted text area.
-
-- **Extensible Design:**  
-  - Easily add new models by subclassing the `Model` class and annotating fields with `@Bind`.
-  - Add new data files or scripts without recompiling the application.
-
-## Project Structure
-
-- `GUI.java` – Main application window and layout.
-- `LeftPanel.java` – Model/data selection, action buttons, and script editor.
-- `RightPanel.java` – Output display area for results.
-- `Controller.java` – Orchestrates model loading, data parsing, running models, and script execution.
-- `Model1.java`, `Model2.java`, `Model3.java` – Example economic models.
-- `Bind.java` – Annotation for model variable binding.
-- `script1.groovy` – Example Groovy script for post-processing model results.
-
-## Getting Started
-
-1. **Run the application:**  
-   Compile and launch `GUI.java` to open the main window.
-
-2. **Select a model and data file:**  
-   Use the left panel to choose a model and a data file.
-
-3. **Run a model:**  
-   Click "Run model" to execute the selected model with the chosen data. Results appear on the right.
-
-4. **Run or create scripts:**  
-   - Use "Run script from file" to select and execute a Groovy script.
-   - Use "Create and run script" to open the script editor, write custom Groovy code, and run it on the model output.
-
-## Requirements
-
-- Java 8 or higher
-- Groovy library (for scripting support)
-- Data files in tabular format
+**Modelling Framework Sample** is a Java-based desktop application designed for running, extending, and analyzing economic models using time-series data and dynamic Groovy scripting.
 
 ---
 
-*Developed as a modular Java Swing application for interactive economic modelling and analysis.*
+### 📝 Description
+
+This tool enables users to choose predefined economic models, load time-series data, simulate results, and dynamically extend model behavior using Groovy scripts — all through an interactive graphical interface. Output is presented in a structured tabular format for analysis.
+
+---
+
+### ✨ Features
+
+- 🧠 **Multiple Economic Models**  
+  Select from built-in models like `Model1`, `Model2`, and `Model3`, each with distinct economic logic.
+
+- 📂 **Data-Driven Simulation**  
+  Initialize variables and simulate time-series using data files (e.g., `Data1.txt`, `Data2.txt`, etc.).
+
+- 💡 **Groovy Script Integration**  
+  - Load and execute external scripts.
+  - Write custom Groovy scripts directly in the in-app editor to transform model output or generate new variables.
+
+- 🖥️ **Interactive Swing GUI**  
+  - Left panel: Model/data selection, action buttons, and script editor.
+  - Right panel: Formatted scrollable area for displaying results.
+
+- 🧩 **Extensible Architecture**  
+  - Add new models by subclassing `Model` and annotating variables with `@Bind`.
+  - Easily add scripts and data without modifying source code.
+
+---
+
+### 🗂️ Project Structure
+
+- `GUI.java` – Launches the main application window.
+- `LeftPanel.java` – Model/data selection UI, buttons, and script editor.
+- `RightPanel.java` – Displays results in a formatted view.
+- `Controller.java` – Manages the workflow between UI, model, data, and scripts.
+- `Model1.java`, `Model2.java`, `Model3.java` – Sample economic models.
+- `Bind.java` – Annotation for binding model variables.
+- `script1.groovy` – Example script for data transformation.
+
+---
+
+### 🚀 Getting Started
+
+1. **Launch the Application:**  
+   Compile and run `GUI.java`.
+
+2. **Choose a Model & Data File:**  
+   Use the left panel to select a model and input data.
+
+3. **Run the Model:**  
+   Click **Run Model** to simulate using the loaded data. View results on the right.
+
+4. **Run or Write Scripts:**  
+   - Use **Run Script from File** to execute saved Groovy scripts.
+   - Use **Create and Run Script** to open the built-in script editor and test code on-the-fly.
+
+---
+
+### ✅ Requirements
+
+- Java 8+
+- Groovy (for script execution)
+- Data files in tab-separated or similar tabular format
+
+---
+
+🛠️ *Developed as part of the UTP (Universal Programming Techniques) course to demonstrate dynamic modeling, GUI design, and scripting integration.*
