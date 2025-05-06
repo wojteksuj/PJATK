@@ -7,7 +7,7 @@ This project is a **relational database system** designed to manage a retail sto
 ## 🛠️ Technologies Used
 
 - **SQL** – Core language for schema, queries, and logic  
-- **Oracle SQL** & **T-SQL** – Compatible versions of all scripts  
+- **Oracle SQL** , **T-SQL** & **PL/SQL** – Compatible versions of all scripts  
 - **Triggers** – Enforce business rules automatically  
 - **Stored Procedures** – Encapsulate complex operations and logic  
 - **Entity-Relationship Diagram (ERD)** – Visual schema design
