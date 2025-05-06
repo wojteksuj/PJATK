@@ -1,0 +1,31 @@
+Requirements:
+- Manage customer profiles with personal details, addresses, and discount   
+eligibility
+- Store employee data, including roles, salary and hire date
+- Track customer transactions 
+- Store item details, such as name, category, price, condition and origin
+- Assign multiple roles to employees 
+- Support various payment method for transactions
+- Allow for buying multiple items in one transaction
+
+Functionalities:
+- Which items were sold in a specific transaction.
+- What is the most expensive transaction ever made?
+- Which payment methods are most frequently used in transactions?
+- Which items are available from a specific country of origin?
+- What roles does an employee hold?
+
+Entity description:
+-PERSON (Stores basic personal information: name, surname, phone number.
+Connected to the Address table by one to many connection. Is a base entity for EMPLOYEE and CUSTOMER)
+-ADDRESS (Holds data for a person address, is connected to CITY by one to many relation)
+-CITY (Contains name of all cities that ADDRESS uses)
+-EMPLOYEE (Stores information about all employees is connected to the PERSON by one to one relation and to ROLE by many to many using joining table EMPLOYEE_ROLE)
+-ROLE (Contains all roles for the employee)
+-CUSTOMER (Stores information about all registered transactions, is connected by one to one with PERSON)
+-TRANSACTION (Holds information about all completed transactions, is connected to PAYMENTMETHOD and CUSTOMER by one to many relations and many to many using joining table TRANSACTION_ITEM with ITEM)
+-PAYMENTMETHOD (Contains all possible payment methods)
+-ITEM (Stores all information about specific item in the store, is connected with CATEGORY, CONDITION and COUNTRYOFORIGIN by one to many relations)
+-CATEGORY (Holds all possible categories for an item)
+-CONDITION (Holds all possible condition types for an item)
+-COUNTRYOFORIGIN (Holds the countries of origin for all items in the store)
