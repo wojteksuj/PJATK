@@ -4,6 +4,13 @@
 This project is a **relational database system** designed to manage a retail store’s operations. It focuses on tracking **customers**, **employees**, **transactions**, and **inventory**, with embedded business logic and analytics support.
 
 ---
+## 🛠️ Technologies Used
+
+- **SQL** – Core language for schema, queries, and logic  
+- **Oracle SQL** & **T-SQL** – Compatible versions of all scripts  
+- **Triggers** – Enforce business rules automatically  
+- **Stored Procedures** – Encapsulate complex operations and logic  
+- **Entity-Relationship Diagram (ERD)** – Visual schema design
 
 ## 🚀 Key Features
 
