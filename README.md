@@ -1,5 +1,5 @@
 # PJATK Projects
-Here you'll find a collection of projects I completed during my time at the **Polish-Japanese Academy of Information Technology (PJATK)** 🏫.
+Here you'll find a collection of projects I completed during my time at the **Polish-Japanese Academy of Information Technology (PJATK)** 
 
 These projects span a variety of topics, including:
 
