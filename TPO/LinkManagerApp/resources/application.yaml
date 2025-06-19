@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: s31087-TPO11
+  h2:
+    console:
+      path: /my-h2-console
+
+
+
